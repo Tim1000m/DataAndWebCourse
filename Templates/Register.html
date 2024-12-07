@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+
+    <h1>This is the registration page</h1>
+
+    <form method="POST" action="{{ url_for('register') }}">
+        {{ form.hidden_tag() }} <!-- To include CSRF token -->
+        {{ form.username.label }} {{ form.username() }}
+        {{ form.password.label }} {{ form.password() }}
+        {{ form.age.label }} {{ form.age() }}
+        {{ form.email.label }} {{ form.email() }}
+        {{ form.profile.label }} {{ form.profile() }}
+        {{ form.profile_image.label }} {{ form.profile_image() }}
+        {{ form.submit() }}
+    </form>
+
+    <a href="{{url_for('login')}}">Already have an account</a>
+
+</body>
+</html>
